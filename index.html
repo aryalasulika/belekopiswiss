@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turnamen Mobile Legend - BELE KOPI SWISS</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0LPG7G69Q4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-0LPG7G69Q4");
+    </script>
+  </head>
+  <body class="bg-black text-white font-sans overflow-x-hidden">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 -z-10">
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.15),transparent_70%)]"
+      ></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.15),transparent_70%)] animate-pulse"
+      ></div>
+      <div
+        class="absolute w-full h-full bg-[linear-gradient(to_right,#000000,rgba(0,0,0,0)_40%,rgba(0,0,0,0)_60%,#000000)]"
+      ></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full top-0 z-50 bg-black/30 backdrop-blur-md border-b border-indigo-500/30"
+    >
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <div class="relative">
+              <div
+                class="absolute -inset-1 bg-indigo-500 rounded-lg blur opacity-25"
+              ></div>
+              <img
+                src="logo.jpg"
+                alt="Logo"
+                class="relative h-10 w-10 rounded-lg"
+              />
+            </div>
+            <span
+              class="ml-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 font-bold text-xl"
+              >BELE ESPORTS</span
+            >
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="relative group">
+              <span
+                class="text-indigo-400 font-medium transition-colors group-hover:text-white"
+                >Home</span
+              >
+              <span
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"
+              ></span>
+            </a>
+            <a href="#teams" class="relative group">
+              <span
+                class="text-indigo-400 font-medium transition-colors group-hover:text-white"
+                >Teams</span
+              >
+              <span
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"
+              ></span>
+            </a>
+            <a href="#bracket" class="relative group">
+              <span
+                class="text-indigo-400 font-medium transition-colors group-hover:text-white"
+                >Bracket</span
+              >
+              <span
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"
+              ></span>
+            </a>
+            <a href="#schedule" class="relative group">
+              <span
+                class="text-indigo-400 font-medium transition-colors group-hover:text-white"
+                >Schedule</span
+              >
+              <span
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div
+      id="home"
+      class="relative min-h-screen flex items-center justify-center pt-20"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"
+        ></div>
+      </div>
+      <div class="relative text-center px-4 animate__animated animate__fadeIn">
+        <div class="relative inline-block">
+          <div
+            class="absolute -inset-1 bg-indigo-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
+          ></div>
+          <img
+            src="logo.jpg"
+            alt="Logo Turnamen"
+            class="relative rounded-xl w-48 mx-auto mb-8"
+          />
+        </div>
+        <h1 class="text-6xl font-bold mb-4 animate__animated animate__fadeInUp">
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+          >
+            Mobile Legends Tournament
+          </span>
+        </h1>
+        <h2
+          class="text-3xl mb-8 text-indigo-200 animate__animated animate__fadeInUp animate__delay-1s"
+        >
+          BELE KOPI SWISS
+        </h2>
+
+        <!-- Futuristic Timer -->
+        <div class="relative">
+          <div
+            class="absolute -inset-1 bg-indigo-500 rounded-xl blur opacity-25"
+          ></div>
+          <div
+            class="relative bg-black/50 backdrop-blur-md rounded-xl p-8 border border-indigo-500/30"
+          >
+            <p class="text-xl mb-4 text-indigo-300">Tournament Countdown</p>
+            <div id="timer" class="grid grid-cols-4 gap-4">
+              <div
+                class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
+              >
+                <span id="days" class="text-3xl font-bold text-indigo-400 block"
+                  >00</span
+                >
+                <span class="text-sm text-indigo-200">Days</span>
+              </div>
+              <div
+                class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
+              >
+                <span
+                  id="hours"
+                  class="text-3xl font-bold text-indigo-400 block"
+                  >00</span
+                >
+                <span class="text-sm text-indigo-200">Hours</span>
+              </div>
+              <div
+                class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
+              >
+                <span
+                  id="minutes"
+                  class="text-3xl font-bold text-indigo-400 block"
+                  >00</span
+                >
+                <span class="text-sm text-indigo-200">Minutes</span>
+              </div>
+              <div
+                class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
+              >
+                <span
+                  id="seconds"
+                  class="text-3xl font-bold text-indigo-400 block"
+                  >00</span
+                >
+                <span class="text-sm text-indigo-200">Seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bracket Section -->
+    <section id="bracket" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500"
+          >
+            Tournament Bracket
+          </span>
+        </h2>
+        <div class="relative">
+          <div
+            class="absolute -inset-1 bg-indigo-500 rounded-xl blur opacity-25"
+          ></div>
+          <div
+            class="relative bg-black/50 backdrop-blur-md rounded-xl p-4 border border-indigo-500/30"
+          >
+            <iframe
+              src="https://brackethq.com/b/avpcc/embed/"
+              class="w-full h-[600px] rounded-lg"
+              frameborder="0"
+              scrolling="auto"
+              allowtransparency="true"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prize Pool Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500"
+          >
+            Prize Pool
+          </span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-black rounded-xl p-8 text-center border border-indigo-500/30"
+            >
+              <div class="text-4xl font-bold mb-4">🏆</div>
+              <h3 class="text-2xl font-bold text-indigo-400 mb-2">1st Place</h3>
+              <p class="text-xl font-bold text-white">Rp 500.000</p>
+            </div>
+          </div>
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-black rounded-xl p-8 text-center border border-purple-500/30"
+            >
+              <div class="text-4xl font-bold mb-4">🥈</div>
+              <h3 class="text-2xl font-bold text-purple-400 mb-2">2nd Place</h3>
+              <p class="text-xl font-bold text-white">Rp 400.000</p>
+            </div>
+          </div>
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-black rounded-xl p-8 text-center border border-pink-500/30"
+            >
+              <div class="text-4xl font-bold mb-4">🥉</div>
+              <h3 class="text-2xl font-bold text-pink-400 mb-2">3rd Place</h3>
+              <p class="text-xl font-bold text-white">Rp 300.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="relative max-w-3xl mx-auto">
+          <div
+            class="absolute -inset-1 bg-indigo-500 rounded-xl blur opacity-25"
+          ></div>
+          <div
+            class="relative bg-black/50 backdrop-blur-md rounded-xl p-8 border border-indigo-500/30"
+          >
+            <h2 class="text-4xl font-bold text-center mb-8">
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500"
+              >
+                About the Tournament
+              </span>
+            </h2>
+            <p class="text-indigo-200 text-lg leading-relaxed mb-8">
+              Turnamen Mobile Legend BELE KOPI SWISS diselenggarakan untuk
+              mempererat komunitas pecinta game Mobile Legend di daerah
+              gorontalo dan sekitarnya. Ayo dukung tim favoritmu dan jadilah
+              saksi momen-momen seru!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div
+                class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
+              >
+                <div class="text-3xl font-bold text-indigo-400 mb-2">13</div>
+                <div class="text-indigo-200">Teams</div>
+              </div>
+              <div
+                class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
+              >
+                <div class="text-3xl font-bold text-indigo-400 mb-2">
+                  Rp 1.500.000
+                </div>
+                <div class="text-indigo-200">Prize Pool</div>
+              </div>
+              <div
+                class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
+              >
+                <div class="text-3xl font-bold text-indigo-400 mb-2">3</div>
+                <div class="text-indigo-200">Days</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 border-t border-indigo-500/30">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Contact Info -->
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000"
+            ></div>
+            <div
+              class="relative bg-black/50 backdrop-blur-md rounded-xl p-6 border border-indigo-500/30"
+            >
+              <h3
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 font-bold text-xl mb-4"
+              >
+                Contact Us
+              </h3>
+              <p class="text-indigo-300">Email: contact@belekopiswiss.com</p>
+              <p class="text-indigo-300">Phone: +62 852 9329 1920</p>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000"
+            ></div>
+            <div
+              class="relative bg-black/50 backdrop-blur-md rounded-xl p-6 border border-purple-500/30"
+            >
+              <h3
+                class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-bold text-xl mb-4"
+              >
+                Follow Us
+              </h3>
+              <div class="flex space-x-4">
+                <a
+                  href="https://www.instagram.com/belekopiswiss/"
+                  target="_blank"
+                  class="text-indigo-300 hover:text-white transition"
+                  >Instagram</a
+                >
+                <a href="#" class="text-indigo-300 hover:text-white transition"
+                  >Facebook</a
+                >
+                <a href="#" class="text-indigo-300 hover:text-white transition"
+                  >YouTube</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-1000"
+            ></div>
+            <div
+              class="relative bg-black/50 backdrop-blur-md rounded-xl p-6 border border-pink-500/30"
+            >
+              <h3
+                class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500 font-bold text-xl mb-4"
+              >
+                Location
+              </h3>
+              <p class="text-indigo-300">
+                Jl. Pasar Minggu, Bubeya, Suwawa, Bone Bolango
+              </p>
+              <p class="text-indigo-300">Gorontalo, Indonesia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center pt-8 border-t border-indigo-500/30">
+          <p class="text-indigo-400">
+            © 2024 BELE KOPI SWISS - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+      // Set the date we're counting down to (replace with your actual tournament start date)
+      const countDownDate = new Date("November 28, 2024 19:00:00").getTime();
+
+      // Update the countdown every 1 second
+      const x = setInterval(function () {
+        // Get the current date and time
+        const now = new Date().getTime();
+
+        // Calculate the distance between now and the countdown date
+        const distance = countDownDate - now;
+
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the corresponding elements
+        document.getElementById("days").innerHTML =
+          days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerHTML =
+          hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerHTML =
+          minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerHTML =
+          seconds < 10 ? "0" + seconds : seconds;
+
+        // If the countdown is finished, display some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
