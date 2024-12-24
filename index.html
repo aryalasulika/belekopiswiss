@@ -24,6 +24,46 @@
 
       gtag("config", "G-0LPG7G69Q4");
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set tanggal target (sesuaikan dengan tanggal turnamen)
+        const targetDate = new Date("2025-01-01T19:00:00").getTime();
+
+        // Update countdown setiap 1 detik
+        const countdown = setInterval(function () {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+
+          // Jika waktu sudah habis
+          if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("days").innerHTML = "0";
+            document.getElementById("hours").innerHTML = "0";
+            document.getElementById("minutes").innerHTML = "0";
+            document.getElementById("seconds").innerHTML = "0";
+            document.querySelector(".countdown-text").innerHTML =
+              "TURNAMEN SUDAH DIMULAI!";
+            return;
+          }
+
+          // Hitung waktu
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Update elemen countdown
+          document.getElementById("days").innerHTML = days;
+          document.getElementById("hours").innerHTML = hours;
+          document.getElementById("minutes").innerHTML = minutes;
+          document.getElementById("seconds").innerHTML = seconds;
+        }, 1000);
+      });
+    </script>
   </head>
   <body class="bg-black text-white font-sans overflow-x-hidden">
     <!-- Animated Background -->
@@ -58,7 +98,7 @@
             </div>
             <span
               class="ml-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 font-bold text-xl"
-              >BELE ESPORTS</span
+              >BELE KOPI SWISS</span
             >
           </div>
           <div class="hidden md:flex space-x-8">
@@ -134,7 +174,7 @@
         <h2
           class="text-3xl mb-8 text-indigo-200 animate__animated animate__fadeInUp animate__delay-1s"
         >
-          BELE KOPI SWISS
+          BELE KOPI SWISS SEASON 2
         </h2>
 
         <!-- Futuristic Timer -->
@@ -145,7 +185,7 @@
           <div
             class="relative bg-black/50 backdrop-blur-md rounded-xl p-8 border border-indigo-500/30"
           >
-            <p class="text-xl mb-4 text-indigo-300">Tournament Countdown</p>
+            <p class="text-xl mb-4 text-indigo-300"></p>
             <div id="timer" class="grid grid-cols-4 gap-4">
               <div
                 class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
@@ -209,7 +249,7 @@
             class="relative bg-black/50 backdrop-blur-md rounded-xl p-4 border border-indigo-500/30"
           >
             <iframe
-              src="https://brackethq.com/b/avpcc/embed/"
+              src="https://brackethq.com/b/to6dc/embed/"
               class="w-full h-[600px] rounded-lg"
               frameborder="0"
               scrolling="auto"
@@ -231,7 +271,8 @@
             Prize Pool
           </span>
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <!-- Rest of the prize cards remain the same -->
           <div class="relative group">
             <div
               class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
@@ -241,7 +282,7 @@
             >
               <div class="text-4xl font-bold mb-4">🏆</div>
               <h3 class="text-2xl font-bold text-indigo-400 mb-2">1st Place</h3>
-              <p class="text-xl font-bold text-white">Rp 500.000</p>
+              <p class="text-xl font-bold text-white">Rp 1.000.000</p>
             </div>
           </div>
           <div class="relative group">
@@ -253,7 +294,7 @@
             >
               <div class="text-4xl font-bold mb-4">🥈</div>
               <h3 class="text-2xl font-bold text-purple-400 mb-2">2nd Place</h3>
-              <p class="text-xl font-bold text-white">Rp 400.000</p>
+              <p class="text-xl font-bold text-white">Rp 500.000</p>
             </div>
           </div>
           <div class="relative group">
@@ -266,6 +307,18 @@
               <div class="text-4xl font-bold mb-4">🥉</div>
               <h3 class="text-2xl font-bold text-pink-400 mb-2">3rd Place</h3>
               <p class="text-xl font-bold text-white">Rp 300.000</p>
+            </div>
+          </div>
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-black rounded-xl p-8 text-center border border-indigo-500/30"
+            >
+              <div class="text-4xl font-bold mb-4">⭐</div>
+              <h3 class="text-2xl font-bold text-indigo-400 mb-2">MVP</h3>
+              <p class="text-xl font-bold text-white">Rp 200.000</p>
             </div>
           </div>
         </div>
@@ -299,21 +352,21 @@
               <div
                 class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
               >
-                <div class="text-3xl font-bold text-indigo-400 mb-2">13</div>
+                <div class="text-3xl font-bold text-indigo-400 mb-2">24</div>
                 <div class="text-indigo-200">Teams</div>
               </div>
               <div
                 class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
               >
                 <div class="text-3xl font-bold text-indigo-400 mb-2">
-                  Rp 1.500.000
+                  Rp 2.000.000
                 </div>
                 <div class="text-indigo-200">Prize Pool</div>
               </div>
               <div
                 class="bg-gradient-to-b from-indigo-900/50 to-purple-900/50 rounded-lg p-4 border border-indigo-500/30"
               >
-                <div class="text-3xl font-bold text-indigo-400 mb-2">3</div>
+                <div class="text-3xl font-bold text-indigo-400 mb-2">6</div>
                 <div class="text-indigo-200">Days</div>
               </div>
             </div>
@@ -402,45 +455,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- Countdown Timer Script -->
-    <script>
-      // Set the date we're counting down to (replace with your actual tournament start date)
-      const countDownDate = new Date("November 28, 2024 19:00:00").getTime();
-
-      // Update the countdown every 1 second
-      const x = setInterval(function () {
-        // Get the current date and time
-        const now = new Date().getTime();
-
-        // Calculate the distance between now and the countdown date
-        const distance = countDownDate - now;
-
-        // Calculate days, hours, minutes, and seconds
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the corresponding elements
-        document.getElementById("days").innerHTML =
-          days < 10 ? "0" + days : days;
-        document.getElementById("hours").innerHTML =
-          hours < 10 ? "0" + hours : hours;
-        document.getElementById("minutes").innerHTML =
-          minutes < 10 ? "0" + minutes : minutes;
-        document.getElementById("seconds").innerHTML =
-          seconds < 10 ? "0" + seconds : seconds;
-
-        // If the countdown is finished, display some text
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("timer").innerHTML = "";
-        }
-      }, 1000);
-    </script>
     <script>
       window.va =
         window.va ||
